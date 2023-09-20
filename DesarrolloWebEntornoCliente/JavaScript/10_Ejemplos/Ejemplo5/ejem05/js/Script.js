@@ -1,5 +1,5 @@
-let person = prompt ("Please enter your name", "Por ejemplo, 'Dumbeldor'");
+let person = prompt ("Please enter your name", "Por ejemplo, 'Rubeus'");
+let apellido = prompt ("Please enter your surname", "Por ejemplo, 'Hagrid'");
 
-function saludar(){
-  alert("Hola" + person);
-}
+alert("Hola " + person + "  " + apellido + ", disfruta la web.");
+
