@@ -18,3 +18,9 @@ console.log(frase.substring(6,7));
 
 let coche = " Peugeot 207";
 console.log(coche.repeat(2));
+
+//Slice por un caracter
+
+let ciclos = "DAW, DAM, ASIR";
+console.log(ciclos.slice(","));
+
