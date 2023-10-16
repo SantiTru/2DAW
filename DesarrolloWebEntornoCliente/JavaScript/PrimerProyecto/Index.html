@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alarma</title>
+</head>
+<body>
+    <h1>Alarma</h1>
+    <p>Introduce el tiempo en segundos y luego pulsa "Encender Alarma":</p>
+    <br>
+    <input type="number" id="tiempoSegundos">
+    <button id="encenderAlarma">Encender Alarma</button>
+    <button id="apagarAlarma" style="display: none;">Apagar Alarma</button>
+    <br>
+    <p id="estadoAlarma"></p>
+
+    <audio id="alarma" src="ruta/sonido-alarma.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
