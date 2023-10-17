@@ -14,7 +14,7 @@ document.getElementById("encenderAlarma").addEventListener("click", function () 
 document.getElementById("apagarAlarma").addEventListener("click", function () {
     clearInterval(intervalId);
     document.getElementById("alarma").pause();
-    document.getElementById("estadoAlarma").textContent = "Alarma apagada";
+    document.getElementById("estadoAlarma").textContent = "Alarma apagada...";
     document.getElementById("estadoAlarma").style.color = "red";
     document.getElementById("encenderAlarma").style.display = "inline";
     document.getElementById("apagarAlarma").style.display = "none";
@@ -25,8 +25,7 @@ function startCountdown() {
     document.getElementById("encenderAlarma").style.display = "none";
     document.getElementById("encenderAlarma").style.color = "green";
     document.getElementById("apagarAlarma").style.display = "inline";
-    document.getElementById("estadoAlarma").textContent = "Alarma encendida";
-    document.getElementById("estadoAlarma").style.color = "green";
+    document.getElementById("estadoAlarma").outerHTML = "<h1 id='estadoAlarma' style='color: green;'>¡Alarma encendida!</h1";
 
     intervalId = setInterval(function () {
         tiempoRestante--;
