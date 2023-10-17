@@ -15,14 +15,18 @@ document.getElementById("apagarAlarma").addEventListener("click", function () {
     clearInterval(intervalId);
     document.getElementById("alarma").pause();
     document.getElementById("estadoAlarma").textContent = "Alarma apagada";
+    document.getElementById("estadoAlarma").style.color = "red";
     document.getElementById("encenderAlarma").style.display = "inline";
     document.getElementById("apagarAlarma").style.display = "none";
+    document.getElementById("apagarAlarma").style.color = "red";
 });
 
 function startCountdown() {
     document.getElementById("encenderAlarma").style.display = "none";
+    document.getElementById("encenderAlarma").style.color = "green";
     document.getElementById("apagarAlarma").style.display = "inline";
     document.getElementById("estadoAlarma").textContent = "Alarma encendida";
+    document.getElementById("estadoAlarma").style.color = "green";
 
     intervalId = setInterval(function () {
         tiempoRestante--;
@@ -30,7 +34,9 @@ function startCountdown() {
             clearInterval(intervalId);
             document.getElementById("alarma").play();
             document.getElementById("estadoAlarma").textContent = "¡Alarma sonando!";
+            document.getElementById("estadoAlarma").style.color = "purple";
             document.getElementById("apagarAlarma").style.display = "inline";
+            document.getElementById("apagarAlarma").style.color = "orange";
         }
     }, 1000);
 }
