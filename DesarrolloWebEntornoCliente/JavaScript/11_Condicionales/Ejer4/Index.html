@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!--Crea un programa que pida una marca de coche:
+Si la marca de coche es Peugeot devolverá 15000€ y si es C4 pues devolverá 20000€.
+Da igual que lo meta en mayúscula, el sistema tiene que sacar su precio.
+Se ha de hacer con switch-case:-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="Script.js"></script>
+    <title>Coches</title>
+    <style>
+      body {
+        background-color: rgb(167, 88, 219);
+      }
+      h3 {
+        background-color: aliceblue;
+      }
+      .contenedorpadre {
+        position: relative;
+        width: 1000px;
+        height: 200px;
+      }
+
+      .contenedorhijo {
+        width: 400px;
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -25px 0 0 -25px;
+        background-color: pink;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedorpadre">
+      <div class="contenedorhijo">
+        <h3>Introduzca una marca de coche de la que quieras consultar el precio:</h3>
+
+        <input type="text" id="marcaIntroducida" />
+        <button type="submit" id="precio">Precio</button>
+
+        <h4>No dejes pasar nuestras ofertas, coches de todos estos modelos:</h4>
+        <hr />
+        <p>
+          Peugeot 206 - Citroen c4 - Ford Focus - Ford Escort - Ford Mustang -
+          Kia Sportage - Kia Optima...
+        </p>
+        <hr />
+        <br>
+        <img src="./Img/cochazo.jpg"  width="300" height="200" alt="Bueno va!!">
+      </div>
+    </div>
+  </body>
+</html>
