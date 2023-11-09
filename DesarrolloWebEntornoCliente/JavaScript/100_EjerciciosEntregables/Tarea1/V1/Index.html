@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAREA 1 PARA INTEGRAR CONOCIMIENTO</title>
-  <link href="Style.css" rel="stylesheet">
-</head>
-<body>
-  <div class="contenedorpadre">
-    <div class="contenedorhijo">
-      <h3>Diccionario Malagueño</h3>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./Script.js"></script>
+    <title>TAREA 1 PARA INTEGRAR CONOCIMIENTO</title>
+    <link href="Style/Style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="contenedorpadre">
+      <div class="contenedorhijo">
+        <h3>Diccionario Malagueño</h3>
+        <h4>
+          Elige cualquiera de los terminos de nuestro diccionario Malagueño para
+          conocer su significado:
+        </h4>
+        <input type="text" id="PalabraConsultada" />
+        <button type="submit" id="Consulta">Consulta la palabra</button>
 
-      <input type="text" id="marcaIntroducida" />
-      <button type="submit" id="precio">Consulta la palabra</button>
-
-      <h4>Elige cualquiera de los terminos de nuestro diccionario Malagueño para conocer su significado:</h4>
-      <hr />
-      <p>
-        Achuchaera, Alargar, Aliquindoi, Alobao, Chorraera, E o Noé?, Encalomao, Encogio, Escopetao, Farola, Fité, Guarnio, Guarrito, Jaba, Merdellón, Pecha, Perita, Piarda, Pila de Ente, Torroles...      </p>
-      <hr />
-      <br>
-      <img src="./Img/DiccionarioMalaguenio.jpeg"  width="300" height="200" alt="Bueno va!!">
+        <hr />
+        <p>
+          Achuchaera, Alargar, Aliquindoi, Alobao, Chorraera, Eonoe,
+          Encalomao, Encogio, Escopetao, Farola, Fite, Guarnio, Guarrito, Jaba,
+          Merdellon, Pecha, Perita, Piarda, Pila de Ente, Torroles...
+        </p>
+        <hr />
+        <br />
+        <img
+          src="./Img/DiccionarioMalaguenio.jpeg"
+          width="80%"
+          height="40%"
+          alt="Bueno va!!"
+        />
+      </div>
     </div>
-  </div>
-</body>
+    <div id="resultadoContainer">
+      <div id="resultado">
+        <!-- Aquí se mostrará el resultado -->
+      </div>
+    </div>
+  </body>
 </html>
