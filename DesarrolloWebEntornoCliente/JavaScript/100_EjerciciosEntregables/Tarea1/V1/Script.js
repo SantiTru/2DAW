@@ -2,45 +2,34 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Obtenemos una referencia al elemento con el ID "Consulta" y lo almacenamos en la variable consultaButton.
   const consultaButton = document.getElementById("Consulta");
-
   // Obtenemos una referencia al elemento con el ID "PalabraConsultada" y lo almacenamos en la variable palabraInput.
   const palabraInput = document.getElementById("PalabraConsultada");
-
   // Obtenemos una referencia al elemento con el ID "resultadoTexto" y lo almacenamos en la variable resultadoTexto.
   const resultadoTexto = document.getElementById("resultadoTexto");
-
   // Obtenemos una referencia al elemento con el ID "imagenResultado" y lo almacenamos en la variable imagenResultado.
   const imagenResultado = document.getElementById("imagenResultado");
-
   // Obtenemos una referencia al elemento con el ID "resultadoContainer" y lo almacenamos en la variable resultadoContainer.
   const resultadoContainer = document.getElementById("resultadoContainer");
-
   // Agregamos un evento click al botón "Consulta".
   consultaButton.addEventListener("click", () => {
     // Obtenemos el valor del campo de entrada de texto, eliminamos espacios en blanco al principio y al final, y lo convertimos a minúsculas.
     const palabraConsultada = palabraInput.value.trim().toLowerCase();
-
     // Llamamos a la función obtenerResultado y le pasamos la palabra consultada como argumento. El resultado se almacena en la variable resultado.
     const resultado = obtenerResultado(palabraConsultada);
-
     // Comprobamos si hay un resultado para la palabra.
     if (resultado) {
       // Si hay un resultado, mostramos el contenedor resultado al cambiar su propiedad de estilo display a "block" (visible).
       resultadoContainer.style.display = "block"; // Muestra el contenedor
-
       // Llenamos el contenido del elemento resultadoTexto con el texto del resultado obtenido.
       resultadoTexto.innerHTML = resultado.frase; // Muestra la frase
-
       // Configuramos la fuente de la imagen para que muestre la imagen correspondiente al resultado.
       imagenResultado.src = resultado.imagen; // Muestra la imagen
     }
   });
-
   // Definimos una función llamada obtenerResultado que toma una palabra como argumento y devuelve su resultado basado en una estructura switch-case.
   function obtenerResultado(palabra) {
     let frase;
     let imagen;
-
     if (palabra === "") {
       // En caso de campo vacío, mostrar la imagen de error
       frase = "Me dejas sin palabras...";
@@ -143,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
           imagen = "./Img/PonArgo.jpg";
           // Si la palabra no coincide con ningún caso, retornamos null para indicar que no hay un resultado.
           console.log("Palabra no encontrada en el diccionario:", palabra);
-        
       }
     }
     // Devolvemos un objeto con la frase y la imagen correspondientes a la palabra consultada.
