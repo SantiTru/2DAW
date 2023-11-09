@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Configuramos la fuente de la imagen para que muestre la imagen correspondiente al resultado.
       imagenResultado.src = resultado.imagen; // Muestra la imagen
-    } 
+    }
   });
 
   // Definimos una función llamada obtenerResultado que toma una palabra como argumento y devuelve su resultado basado en una estructura switch-case.
@@ -41,94 +41,112 @@ document.addEventListener("DOMContentLoaded", () => {
     let frase;
     let imagen;
 
-    // Utilizamos una estructura switch-case para determinar el resultado basado en la palabra consultada.
-    switch (palabra) {
-      case "achuchaera":
-        frase = "Expresión utilizada para referirse a una amistad entre dos personas.";
-        imagen = "./Img/Achuchaera.jpg";
-        break;
-      case "alargar":
-        frase = "Llevar a alguien a algún sitio.";
-        imagen = "./Img/Alargar.jpg";
-        break;
-      case "aliquindoi":
-        frase ="Expresión malagueña que significa 'Estar atento a algo para aprender cómo se hace'. Viene de la expresión inglesa 'Look and do it.'";
-        imagen = "./Img/Aliquindoi.jpg";
-        break;
-      case "alobao":
-        frase = "Persona despistada o en las nubes.";
-        imagen = "./Img/Alobao.jpg";
-        break;
-      case "chorraera":
-        frase = "Tobogán. Mobiliario típico de parques infantiles.";
-        imagen = "./Img/Chorraera.jpg";
-        break;
-      case "eonoe":
-        frase = "Expresión que se usa para confirmar un argumento. ¿Es, o no es así?";
-        imagen = "./Img/EONo.jpg";
-        break;
-      case "encalomao":
-        frase = "Acoplarse a algún plan.";
-        imagen = "./Img/Encalomao.jpg";
-        break;
-      case "encogio":
-        frase = "Alguien que no es muy generoso.";
-        imagen = "./Img/Encogio.jpg";
-        break;
-      case "escopetao":
-        frase = "Expresión utilizada para referirse a alguien que va con mucha prisa.";
-        imagen = "./Img/Escopetao.jpg";
-        break;
-      case "farola":
-        frase = "Mandar a alguien a la Farola es el equivalente Malagueño a mandarlo a paseo.";
-        imagen = "./Img/farola.jpg";
-        break;
-      case "fite":
-        frase = "Fíjate.";
-        imagen = "./Img/Fite.jpg";
-        break;
-      case "guarnio":
-        frase = "Estar extremadamente cansado.";
-        imagen = "./Img/guarnio.jpg";
-        break;
-      case "guarrito":
-        frase = "Taladro. Viene de la primera marca que se hizo con el mercado Malagueño de esta herramienta. La marca Warrington.";
-        imagen = "./Img/Guarrito.jpg";
-        break;
-      case "jaba":
-        frase = "Pie. Da lugar a la expresión 'Pedaso de jaba', dicha cuando alguien tiene un pie muy grande.";
-        imagen = "./Img/Jaba.jpg";
-        break;
-      case "merdellon":
-        frase = "Persona con poca educación. Viene de la expresión en francés 'merde de gens'.";
-        imagen = "./Img/Merdellon.jpg";
-        break;
-      case "pecha":
-        frase = "Cantidad grande de alguna cosa.";
-        imagen = "./Img/Pecha.jpg";
-        break;
-      case "perita":
-        frase = "Expresión que se utiliza para decir que algo está guay, divertido o es de buena calidad.";
-        imagen = "./Img/Perita.jpg";
-        break;
-      case "piarda":
-        frase = "Faltar a clase.";
-        imagen = "./Img/Piarda.jpg";
-        break;
-      case "pila de ente":
-        frase = "Muchas personas.";
-        imagen = "./Img/piladeEnte.jpg";
-        break;
-      case "torroles":
-        frase = "La forma popular de conocer al pueblo de Torremolinos.";
-        imagen = "./Img/ATorroles.jpg";
-        break;
+    if (palabra === "") {
+      // En caso de campo vacío, mostrar la imagen de error
+      frase = "Me dejas sin palabras...";
+      imagen = "./Img/PonArgo.jpg";
+    } else {
+      // Utilizamos una estructura switch-case para determinar el resultado basado en la palabra consultada.
+      switch (palabra) {
+        case "achuchaera":
+          frase =
+            "Expresión utilizada para referirse a una amistad entre dos personas.";
+          imagen = "./Img/Achuchaera.jpg";
+          break;
+        case "alargar":
+          frase = "Llevar a alguien a algún sitio.";
+          imagen = "./Img/Alargar.jpg";
+          break;
+        case "aliquindoi":
+          frase =
+            "Expresión malagueña que significa 'Estar atento a algo para aprender cómo se hace'. Viene de la expresión inglesa 'Look and do it.'";
+          imagen = "./Img/Aliquindoi.jpg";
+          break;
+        case "alobao":
+          frase = "Persona despistada o en las nubes.";
+          imagen = "./Img/Alobao.jpg";
+          break;
+        case "chorraera":
+          frase = "Tobogán. Mobiliario típico de parques infantiles.";
+          imagen = "./Img/Chorraera.jpg";
+          break;
+        case "eonoe":
+          frase =
+            "Expresión que se usa para confirmar un argumento. ¿Es, o no es así?";
+          imagen = "./Img/EONo.jpg";
+          break;
+        case "encalomao":
+          frase = "Acoplarse a algún plan.";
+          imagen = "./Img/Encalomao.jpg";
+          break;
+        case "encogio":
+          frase = "Alguien que no es muy generoso.";
+          imagen = "./Img/Encogio.jpg";
+          break;
+        case "escopetao":
+          frase =
+            "Expresión utilizada para referirse a alguien que va con mucha prisa.";
+          imagen = "./Img/Escopetao.jpg";
+          break;
+        case "farola":
+          frase =
+            "Mandar a alguien a la Farola es el equivalente Malagueño a mandarlo a paseo.";
+          imagen = "./Img/farola.jpg";
+          break;
+        case "fite":
+          frase = "Fíjate.";
+          imagen = "./Img/Fite.jpg";
+          break;
+        case "guarnio":
+          frase = "Estar extremadamente cansado.";
+          imagen = "./Img/guarnio.jpg";
+          break;
+        case "guarrito":
+          frase =
+            "Taladro. Viene de la primera marca que se hizo con el mercado Malagueño de esta herramienta. La marca Warrington.";
+          imagen = "./Img/Guarrito.jpg";
+          break;
+        case "jaba":
+          frase =
+            "Pie. Da lugar a la expresión 'Pedaso de jaba', dicha cuando alguien tiene un pie muy grande.";
+          imagen = "./Img/Jaba.jpg";
+          break;
+        case "merdellon":
+          frase =
+            "Persona con poca educación. Viene de la expresión en francés 'merde de gens'.";
+          imagen = "./Img/Merdellon.jpg";
+          break;
+        case "pecha":
+          frase = "Cantidad grande de alguna cosa.";
+          imagen = "./Img/Pecha.jpg";
+          break;
+        case "perita":
+          frase =
+            "Expresión que se utiliza para decir que algo está guay, divertido o es de buena calidad.";
+          imagen = "./Img/Perita.jpg";
+          break;
+        case "piarda":
+          frase = "Faltar a clase.";
+          imagen = "./Img/Piarda.jpg";
+          break;
+        case "pila de ente":
+          frase = "Muchas personas.";
+          imagen = "./Img/piladeEnte.jpg";
+          break;
+        case "torroles":
+          frase = "La forma popular de conocer al pueblo de Torremolinos.";
+          imagen = "./Img/ATorroles.jpg";
+          break;
         default:
+          // Si la palabra no coincide con ningún caso, mostrar la imagen de error
+          frase = "Palabra no encontrada en el diccionario";
+          imagen = "./Img/PonArgo.jpg";
           // Si la palabra no coincide con ningún caso, retornamos null para indicar que no hay un resultado.
-          return null;
+          console.log("Palabra no encontrada en el diccionario:", palabra);
+        
       }
-  
-      // Devolvemos un objeto con la frase y la imagen correspondientes a la palabra consultada.
-      return { frase, imagen };
     }
-  });
+    // Devolvemos un objeto con la frase y la imagen correspondientes a la palabra consultada.
+    return { frase, imagen };
+  }
+});
