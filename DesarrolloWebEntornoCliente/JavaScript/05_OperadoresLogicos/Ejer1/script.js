@@ -37,6 +37,7 @@ function fiesta() {
     }
   }
 }
+
 function reset() {
   respuestaEdad.innerHTML = "";
   respuestaEntrada.innerHTML = "";
