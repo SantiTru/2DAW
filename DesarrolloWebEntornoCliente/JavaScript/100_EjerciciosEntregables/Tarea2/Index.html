@@ -6,29 +6,40 @@
     <title>Document</title>
     <link rel="stylesheet" href="./Style/style.css" />
     <script src="./Js/ScriptV1.js" defer></script>
-    <link rel="shortcut icon" href="./Img/SantiTru.png" />
+    <link rel="shortcut icon" href="./Img/Boletin.png" />
   </head>
   <body>
-    <h1>-</h1>
-    <input type="number" id="" />
-    <input type="number" id="" />
-    <br />
-    <br />
-    <button id=""></button>
-    <button id=""></button>
-    <button id=""></button>
-    <button id=""></button>
-    <br />
-    <div class="">
-      <button id=""></button>
-      <button id=""></button>
-      <br />
-      <button id=""></button>
+    <h1>Alumno</h1>
+    <label for="nombres">Selecciona un nombre:</label>
+    <select id="nombres" name="nombres">
+      <option value="nombre0">Alumno</option>
+      <option value="nombre1">Santi Trujillo</option>
+      <option value="nombre2">Cristina Conde</option>
+      <option value="nombre3">Carmen Trujillo</option>
+      <option value="nombre4">Lunna Dos Santos</option>
+      <option value="nombre5">Ángel Moya</option>
+    </select>
+
+    <ul class="notas"></ul>
+    
+    <div>
+      <h3>Promedio:</h3>
+      <button id="calcularPromedioBtn">Calcular Promedio</button>
+      <span id="promedioResultado"></span>
+      <h3>Nota más alta:</h3>
+      <button id="buscarNotaAltaBtn">Buscar nota más alta</button>
+      <span id="notaAltaResultado"></span>
+      <h3>¿Hubo algún suspenso?</h3>
+      <button id="buscarSuspensoBtn">Buscar suspensos</button>
+      <span id="suspensoResultado"></span>
     </div>
-    <h3></h3>
-    <input type="text" id="o" />
     <br />
     <br />
-    <p>¿Ya has terminado? <a href="./BotonHuidizo.html">Dame tu feedback!</a></p>
+    <p>
+      ¿Ya has terminado? <a href="./BotonHuidizo.html">Dame tu feedback!</a>
+    </p>
+    <footer style="position: fixed; bottom: 0; right: 0">
+      <img src="./Img/SantiTru.png" alt="Firma" width="200px" />
+    </footer>
   </body>
 </html>
