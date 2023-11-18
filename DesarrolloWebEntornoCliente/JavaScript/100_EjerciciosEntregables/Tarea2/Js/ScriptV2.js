@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   buscarSuspensoBtn.addEventListener("click", buscarYMostrarSuspenso);
   resetBtn.addEventListener("click", resetearBotones);
 
+  //Deshabilitar los botones para dejar solo activo el de carga de notas al cargar el DOM
   resetBtn.disabled = true;
   calcularPromedioBtn.disabled = true;
   buscarNotaAltaBtn.disabled = true;
@@ -69,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para mostrar las notas del alumno seleccionado
   function mostrarNotas() {
-
     var nombreSeleccionado = selectNombres.value;
     var notas = notasAlumnos[nombreSeleccionado] || [];
 
