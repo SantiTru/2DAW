@@ -18,6 +18,7 @@
       <option value="nombre3">Carmen Trujillo</option>
       <option value="nombre4">Lunna Dos Santos</option>
       <option value="nombre5">Ángel Moya</option>
+      <option value="nombre6">Antonio ElQueFalta</option>
     </select>
 
     <ul class="notas"></ul>
@@ -32,14 +33,18 @@
       <h3>¿Hubo algún suspenso?</h3>
       <button id="buscarSuspensoBtn">Buscar suspensos</button>
       <span id="suspensoResultado"></span>
+      <h3 id="tituloCargaBtn">Cargar Notas</h3>
+      <button id="cargaNotasBtn">Cargar Notas</button>
+      <h3 id="tituloResetBtn">Resetear</h3>
+      <button id="resetBtn" onclick="resetearBotones()">Resetear</button>
     </div>
     <br />
     <br />
-    <p>
-      ¿Ya has terminado? <a href="./BotonHuidizo.html">Dame tu feedback!</a>
-    </p>
-    <footer style="position: fixed; bottom: 0; right: 0">
-      <img src="./Img/SantiTru.png" alt="Firma" width="100px" />
+    <footer style="position: fixed; bottom: 0; right: 0; display: flex; align-items: center; justify-content: flex-end;">
+      <p>
+        ¿Ya has terminado? <a href="./BotonHuidizo.html">Dame tu feedback!</a>
+      </p>
+      <img src="./Img/SantiTru.png" alt="Firma" width="100px" style="border: 2px solid #ccc; border-radius: 30px; margin-left: 10px;"/>
     </footer>
   </body>
 </html>

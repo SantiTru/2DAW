@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nombre3: [7, 5, 6, 8, 3, 7, 9, 5, 6, 8],
     nombre4: [9, 7, 8, 5, 6, 10, 7, 2, 9, 5],
     nombre5: [8, 4, 9, 3, 7, 5, 6, 2, 9, 7],
+    nombre6: [],
   };
 
   var selectNombres = document.getElementById("nombres");
@@ -21,8 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
   var notaAltaResultado = document.getElementById("notaAltaResultado");
   var buscarSuspensoBtn = document.getElementById("buscarSuspensoBtn");
   var suspensoResultado = document.getElementById("suspensoResultado");
+  var tituloCargaBtn = document.getElementById("tituloCargaBtn");
+  var cargaNotasBtn = document.getElementById("cargaNotasBtn");
+  var tituloResetBtn = document.getElementById("tituloResetBtn");
+  var resetBtn = document.getElementById("resetBtn");
 
   //ZONA DE EVENTOS
+
+  resetBtn.disabled = true;
+  resetBtn.hidden = true;
+  tituloCargaBtn.hidden = true;
+  cargaNotasBtn.disabled = true;
+  cargaNotasBtn.hidden = true;
+  tituloResetBtn.hidden = true;
 
   // Agregar un evento de cambio al elemento select
   selectNombres.addEventListener("change", mostrarNotas);
@@ -91,6 +103,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var nombreSeleccionado = selectNombres.value;
     var notas = notasAlumnos[nombreSeleccionado] || [];
 
+    if (notas.length === 0) {
+      alert("No hay notas para calcular el promedio.");
+      return;
+    }
+
     // Calcular y mostrar el promedio
     var promedio = calcularPromedio(notas);
     alert("Promedio: " + promedio);
@@ -117,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     notaAltaResultado.textContent = "Nota más alta: " + notaAlta;
   }
 
-  // Función para calcular y mostrar suspensos
+  // Función para buscar y mostrar suspensos
   function buscarYMostrarSuspenso() {
     var nombreSeleccionado = selectNombres.value;
     var notas = notasAlumnos[nombreSeleccionado] || [];
@@ -136,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return nota < umbralSuspensos;
     });
 
-    // Mostrar los suspensos en un mensaje o en un elemento HTML
+    // Mostrar los suspensos en un mensaje y en un elemento HTML
     if (suspensos.length > 0) {
       alert("Suspensos: " + suspensos);
       //ZONA DE ESCRITURA DEL DOM
@@ -148,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Función para calcular el promedio de un array de números
+  // Función para calcular el promedio de notas en el array
   function calcularPromedio(array) {
     var sum = array.reduce(function (total, nota) {
       return total + nota;
