@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>¿Te gustó?</title>
+    <link rel="stylesheet" href="./Style/style.css" />
+    <style>
+
+h1 {
+  color: rgb(16, 11, 75);
+  text-align: center;
+}
+
+      div.container {
+        position: relative;
+        width: 700px;
+        height: 600px;
+      }
+      div.c2 {
+        position: absolute;
+        left: 40%;
+        top: 22.5%;
+        width: 20px;
+        height: 20px;
+      }
+      div.c1 {
+        position: absolute;
+        left: 55%;
+        top: 22.5%;
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dame tu sincera opinión</h1>
+
+    <script>
+      var flag = 1;
+      function t() {
+        if (flag == 1) {
+          N.style.top = "75px";
+          N.style.left = "700px";
+        }
+        if (flag == 2) {
+          N.style.top = "115px";
+          N.style.left = "100px";
+        }
+        if (flag == 3) {
+          N.style.top = "300px";
+          N.style.left = "350px";
+        }
+        if (flag == 4) {
+          N.style.top = "600px";
+          N.style.left = "200px";
+        }
+        if (flag == 5) {
+          N.style.top = "600px";
+          N.style.left = "700px";
+        }
+        flag = flag + 1;
+        if (flag == 6) {
+          flag = 1;
+        }
+      }
+      function al() {
+        alert("¡Gracias!");
+        window.location.href = "index.html";
+      }
+    </script>
+    <p>¿Te ha gustado mi código?</p>
+    <div class="container">
+    <div id="N" class="c1">
+      <form>
+        <input type="button" value="NO" onmouseover="t()" />
+      </form>
+    </div>
+    <div id="Y" class="c2">
+      <form>
+        <input type="button" value="SI" onclick="al()" />
+      </form>
+    </div>
+  
+  </div>
+
+    <footer style="position: fixed; bottom: 0; right: 0">
+      Bueno va... aunque no te guste...
+      <a href="./Index.html">Puedes volver al programa principal!</a>
+    </footer>
+  </body>
+</html>
