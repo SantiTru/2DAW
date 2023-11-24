@@ -40,14 +40,20 @@ function agregarTweet() {
 function mostrarTweets() {
     // Limpiamos la lista antes de mostrar los tweets actualizados
     lista.innerHTML = "";
-
+/*
     // Recorremos el array de tweets y agregamos cada uno a la lista
     for (let i = 0; i < array_tweets.length; i++) {
         let tweet = array_tweets[i];
         let crearLista = document.createElement("li");
         crearLista.textContent = `${tweet.texto}`;
         lista.appendChild(crearLista);
-    }
+    }*/
+    array_tweets.forEach(tweet => {
+        let crearLista = document.createElement("li");
+        crearLista.textContent = `${tweet.texto}`;
+        lista.appendChild(crearLista);
+    })
+
 }
 
 function mensajeError() {
