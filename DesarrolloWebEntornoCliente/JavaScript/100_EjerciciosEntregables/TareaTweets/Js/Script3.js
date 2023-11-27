@@ -1,3 +1,5 @@
+//SOLUCIÓN DE LOS COMPAÑEROS EN CLASE
+
 const tweetsArray = localStorage.getItem("tweets")
   ? JSON.parse(localStorage.getItem("tweets"))
   : [];

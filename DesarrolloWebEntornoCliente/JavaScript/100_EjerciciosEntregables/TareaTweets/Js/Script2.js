@@ -1,110 +1,122 @@
-//Carga del DOM
-//Declaracion de variables
+const ARRAY_TWEETS = [];
+const LISTA = document.querySelector('#listaDinamica');
+const ERROR = document.querySelector('#mensajeError');
+const BTN = document.querySelector('#boton');
+const CAJA = document.querySelector('#caja');
+const RESET_BTN = document.querySelector('#resetBtn'); 
 
-const array_tweets = [];
-let lista = document.querySelector('#listaDinamica');
-let error = document.querySelector('#mensajeError');
-let btn = document.querySelector('#boton');
+// Carga tweets desde localStorage al cargar la página
+cargarTweetsDesdeLocalStorage();
 
-// Funciones
-btn.addEventListener("click", () => {
+BTN.addEventListener("click", () => {
     agregarTweet();
-    
+});
+
+RESET_BTN.addEventListener("click", () => { 
+    resetearTweets();
 });
 
 function agregarTweet() {
-  let caja = document.querySelector('#caja');
-  let mensajes = caja.value.trim();
-  
-  if (mensajes !== "") {
-      // Creamos el nuevo tweet
-      let tweetNuevo = {
-          texto: mensajes,
-          fecha: new Date().toLocaleString()
-      };
-      // Lo agregamos al array
-      array_tweets.push(tweetNuevo);
+    let mensajes = CAJA.value.trim();
 
-      // Llamamos a la función para mostrar todos los tweets
-      mostrarTweets();  
+    if (mensajes !== "") {
+        // Creamos el nuevo tweet
+        let tweetNuevo = {
+            texto: mensajes,
+            fecha: new Date().toLocaleString()
+        };
 
-      //mostramos mensaje enviado
-      mensajeGood();
+        // Lo agregamos al array
+        ARRAY_TWEETS.push(tweetNuevo);
 
-      //reseteamos la caja
-      caja.value = "";
-      
-      
-  } else {
-      mensajeError();
-  }
+        // Guardamos el array en localStorage antes de mostrar los tweets
+        guardarTweetsEnLocalStorage();
+
+        // Llamamos a la función para mostrar todos los tweets después de guardar en localStorage
+        mostrarTweets();
+
+        // Mostramos mensaje enviado
+        mensajeGood();
+
+        // Reseteamos la caja
+        CAJA.value = "";
+    } else {
+        mensajeError();
+    }
 }
 
 function mostrarTweets() {
-  // Limpiamos la lista antes de mostrar los tweets actualizados
-  lista.innerHTML = "";
+    // Crear un string HTML en lugar de manipular el DOM directamente
+    let listaHTML = "";
 
-  // Recorremos el array de tweets y agregamos cada uno a la lista
-  for (let i = 0; i < array_tweets.length; i++) {
-    let tweet = array_tweets[i];
+    for (let i = 0; i < ARRAY_TWEETS.length; i++) {
+        let tweet = ARRAY_TWEETS[i];
 
-    // Agregamos el botón de borrado
-    let botonBorrar = document.createElement("button");
-    botonBorrar.textContent = " Borrar ";
-    botonBorrar.addEventListener("click", () => {
-      // Eliminamos el tweet del array
-      array_tweets.splice(array_tweets.indexOf(tweet), 1);
+        // Construir el fragmento HTML para el tweet
+        listaHTML += `<li>${tweet.texto}&nbsp;<img src="./Img/papelera.png" alt="Borrar" style="cursor: pointer; width: 7%;" onclick="eliminarTweet(${i})"></li>`;
+    }
 
-      // Llamamos a la función para actualizar la lista
-      mostrarTweets();
-    });
-
-    let li = document.createElement("li");
-    li.textContent = `${tweet.texto}`;
-    li.setAttribute("data-tweet-id", tweet.id);
-    li.appendChild(botonBorrar);
-
-    lista.appendChild(li);
-  }
+    // Establecer el contenido de la lista una vez al final del bucle
+    LISTA.innerHTML = listaHTML;
 }
 
 function mensajeError() {
-    let caja = document.querySelector('#caja');
-    let mensajes = caja.value.trim();
-
-    if (mensajes === "") {
-        error.innerHTML = "Tweet vacío. Ingrese texto para continuar";
-        error.className = "mensajeError";
+    if (CAJA.value.trim() === "") {
+        mostrarMensaje("Tweet vacío. Ingrese texto para continuar", "mensajeError");
     }
+}
+
+function mensajeGood() {
+    if (CAJA.value.trim() !== "") {
+        mostrarMensaje("Tweet enviado.", "mensajeGood");
+    }
+}
+
+function mostrarMensaje(mensaje, className) {
+    ERROR.innerHTML = mensaje;
+    ERROR.className = className;
 
     // Establecer un temporizador para borrar el mensaje después de 3 segundos
     setTimeout(function () {
-        error.innerHTML = "";
+        ERROR.innerHTML = "";
         // Restablecer la clase a su valor predeterminado después de borrar el mensaje
-        error.className = "";
+        ERROR.className = "";
     }, 3000);
 }
 
-function mensajeGood(){
-    let caja = document.querySelector('#caja');
-    let mensajes = caja.value.trim();
+function guardarTweetsEnLocalStorage() {
+    // Convierte el array de tweets a una cadena JSON y lo guarda en localStorage
+    localStorage.setItem('ARRAY_TWEETS', JSON.stringify(ARRAY_TWEETS));
+}
 
-    if (mensajes !== "") {
-        error.innerHTML = "Tweet enviado.";
-        error.className = "mensajeGood";
+function cargarTweetsDesdeLocalStorage() {
+    // Obtiene la cadena JSON del localStorage y la convierte de nuevo a un array
+    const storedTweets = localStorage.getItem('ARRAY_TWEETS');
+    if (storedTweets) {
+        ARRAY_TWEETS.push(...JSON.parse(storedTweets));
+        // Muestra los tweets almacenados al cargar la página
+        mostrarTweets();
     }
-
-    // Establecer un temporizador para borrar el mensaje después de 3 segundos
-    setTimeout(function () {
-        error.innerHTML = "";
-        // Restablecer la clase a su valor predeterminado después de borrar el mensaje
-        error.className = "";
-    }, 3000);
-
 }
 
+function eliminarTweet(index) {
+    // Eliminar el tweet del array
+    ARRAY_TWEETS.splice(index, 1);
 
+    // Actualizar la vista
+    mostrarTweets();
 
+    // Guardar en localStorage
+    guardarTweetsEnLocalStorage();
+}
 
+function resetearTweets() {
+    // Vaciar el array de tweets
+    ARRAY_TWEETS.length = 0;
 
+    // Actualizar la vista
+    mostrarTweets();
 
+    // Guardar en localStorage
+    guardarTweetsEnLocalStorage();
+}
