@@ -19,11 +19,11 @@ body{
 }
 #container-lista{
     
-    width: 500px;
+    width: 700px;
     height: 165px;
     margin-left: 90px;
     margin-top: 68px;
-    
+    margin-right: 90px;
     background-color: rgb(128, 204, 221);
     border: 1px solid black;
     border-radius: 5px;
