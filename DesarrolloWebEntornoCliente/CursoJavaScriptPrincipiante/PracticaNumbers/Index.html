@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica Numbers JS</title>
+</head>
+<body>
+  <script>
+    const TOTAL = 102;
+    const PEOPLE = 6;
+    const TOTAL_BY_PERSON= TOTAL / PEOPLE;
+    console.log("Cena de amigos, total a pagar cada uno: " + TOTAL_BY_PERSON + " euros por persona.")
+
+    const PRICE_MOBILE = 300;
+    const PRICE_HEADPHONES = 30;
+    const PRICE_CASE = 10;
+    const DISCOUNT = 10;
+    const TOTAL2 = PRICE_MOBILE + PRICE_HEADPHONES + PRICE_CASE;
+    const DISCOUNT_TOTAL = TOTAL2 * DISCOUNT / 100;
+    const SUBTOTAL = TOTAL2 - DISCOUNT_TOTAL;
+    console.log("El total de la compra es: " + TOTAL2 + " euros.");
+    console.log("El total de la compra con el descuento es: " + SUBTOTAL + " euros.")
+    console.log("Has obtenido un descuento de: " + DISCOUNT_TOTAL + " euros.");
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica Strings JS</title>
+</head>
+<body>
+  <p class = "newsletter-text"></p>
+  <script>
+    //concatenar texto
+    console.log('Hello ' + 'World');
+    //template literals
+    const NAME = 'Cristina';
+    console.log('Hello ' + NAME + ' whatever');
+    console.log(`Hello ${NAME} whatever`);
+    //typeof
+    console.log(typeof NAME);
+    // .length
+    console.log(NAME.length);
+    // .includes()
+    console.log(NAME.includes('Cris'));
+    // .slice(start, end)
+    console.log(NAME.slice(2, 5));
+    // .replace('este texto', 'por este otro')
+    console.log(NAME.replace('na', 'nas'));
+    // .trim()
+    const TEXT = '       Cri s ti na        ';
+    console.log(TEXT);
+    console.log(TEXT.trim());
+    // .split(´,´)
+    const GEOLOCATION = 'Calle Whatever, 7, 10';
+    console.log(GEOLOCATION);
+    console.log(GEOLOCATION.split(','));
+
+
+    //--------------------------------------------//
+
+    const NAME2 = 'Cristina';
+    const GAME = 'Link awakening';
+    const DISCOUNT = 20;
+    const NEWSLETTER = `Hola ${NAME}, 
+    Como regalo de bienvenida al Club de gamers, 
+    queremos ofrecerte un descuento del ${DISCOUNT}%
+    en el próximo lanzamiento de tu interés: "${GAME}".
+    Esperamos que lo disfrutes,
+    Un saludo,`;
+    document.querySelector('.newsletter-text').innerHTML=NEWSLETTER;
+  </script>
+</body>
+</html>

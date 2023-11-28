@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica Booleanos</title>
+</head>
+<body>
+  <p class="block-text"></p>
+  <script>
+    console.log("Valores True: ")
+    console.log(Boolean(1));
+    console.log(Boolean('Whatever'));
+    console.log(Boolean(3.14));
+    console.log(Boolean(100 > 5));
+    console.log(Boolean(1 < 100));
+    console.log(Boolean('1' == 1));
+    //Ojo con el triple igual ¡valor y tipo!
+    console.log(Boolean('1' === 1));
+
+    console.log('Valores False: ')
+    console.log(Boolean(0));
+    console.log(Boolean(-0));
+    console.log(Boolean(''));
+    console.log(Boolean(NaN));
+    console.log(Boolean(null));
+    console.log(Boolean(undefined));
+    console.log(Boolean('1' === 1));
+
+//PRACTICA
+
+    const USER_LOGGED = false;
+    const BLOCK_TEXT = document.querySelector('.block-text');
+    if (USER_LOGGED){
+      BLOCK_TEXT.innerHTML = 'Haz click aqui para ver el contenido.'
+    }else{
+      BLOCK_TEXT.innerHTML = 'Debes registrarte para leer este articulo.'
+    }
+  </script>
+</body>
+</html>
