@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase # 2 sobre DOM</title>
+    <style>
+      #parrafo {
+        color: rgb(0, 30, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <p id="parrafo">Mi primera clase práctica de DOM</p>
+    <p>Segundo parrafo</p>
+
+    <script type="text/javascript">
+
+      let parrafo = document.getElementById("parrafo");
+
+      console.log(parrafo.innerText);
+
+      let parrafo2 = document.getElementsByTagName("p");
+
+      console.log(parrafo2);
+      
+      parrafo2[1].id= "mi ID";
+
+      parrafo2[1].style.color = "green";
+      parrafo2[1].style.fontSize = "50px";
+      parrafo2[1].style.textAlign = "center";
+      parrafo2[1].style.backgroundColor = "purple";
+
+    </script>
+  </body>
+</html>

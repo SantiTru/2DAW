@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase # 3 sobre DOM</title>
+  </head>
+  <body>
+   
+    <p>Mi querido parrafo</p>
+
+    <ul id="Todo_list">
+
+
+    </ul>
+
+    <script type="text/javascript">
+
+      //let parrafo = document.getElementById("parrafo");
+
+     //console.log(parrafo.innerText);
+
+      let parrafo = document.getElementsByTagName("p");
+
+      console.log(parrafo);
+      
+      parrafo[0].id= "mi ID";
+      parrafo[0].style.color = "green";
+      parrafo[0].style.fontSize = "50px";
+      parrafo[0].style.textAlign = "center";
+      parrafo[0].style.backgroundColor = "purple";
+
+      //window.alert("¡Hola!");
+
+      //window.prompt("¿Cuál es tu nombre?");
+
+      //window.localStorage.setItem("color", "blue");
+
+      //window.localStorage.getItem("color");
+
+      var tareas = [
+        "Fregar platos", 
+        "Hacer menu", 
+        "Tirar basura",
+      ];
+
+      var todoList = document.querySelector("#Todo_list");
+      console.log(todoList);
+
+      for(var i = 0; i < tareas.length; i++) {
+        var tarea = tareas[i];
+        var li = document.createElement("li");
+        li.textContent = tarea;
+        li.id = "elemento" + i;
+        todoList.appendChild(li);
+      }
+
+      setTimeout(function() {
+        var elementoAEliminar = document.getElementById("elemento2");
+        todoList.removeChild(elementoAEliminar);
+      }, 3000);
+
+   
+    </script>
+  </body>
+</html>
