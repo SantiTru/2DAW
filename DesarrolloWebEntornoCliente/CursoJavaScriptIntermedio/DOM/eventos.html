@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos</title>
+  </head>
+  <body>
+    <h1>Eventos</h1>
+
+    <button id="cambiarFondo">Cambiar fondo aleatorio</button>
+    <button id="botonRojo">Cambiar fondo a rojo</button>
+
+    <script type="text/javascript">
+      document.addEventListener("keydown", function (event) {
+        console.log(event.key);
+      });
+
+      let boton = document.getElementById("cambiarFondo");
+
+      function random(numeroMaximo) {
+        return Math.round(Math.random() * numeroMaximo);
+      }
+
+      boton.addEventListener("click", function (evento) {
+        console.log("Botón aleatorio clickado");
+        var randomColor = [random(255), random(255), random(255)];
+        document.body.style.backgroundColor =
+          "rgb(" +
+          randomColor[0] +
+          "," +
+          randomColor[1] +
+          "," +
+          randomColor[2] +
+          ")";
+        console.log(evento);
+      });
+
+      function cambiarFondoARojo() {
+        let event = new CustomEvent("cambiarFondo", {
+          detail: { color: "red" },
+        });
+        document.dispatchEvent(event);
+        //console.log(event.detail.color);
+      }
+
+      let rojo = document.getElementById("botonRojo");
+
+      rojo.addEventListener("click", function () {
+        console.log("Botón rojo clickado");
+        cambiarFondoARojo();
+      });
+
+      document.addEventListener("cambiarFondo", function (evento) {
+        //console.log(evento);
+        let color = evento.detail.color;
+        document.body.style.backgroundColor = color;
+      });
+    </script>
+  </body>
 </html>

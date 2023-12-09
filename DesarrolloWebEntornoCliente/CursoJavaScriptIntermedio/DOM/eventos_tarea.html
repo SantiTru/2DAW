@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase # 5 sobre DOM</title>
+  </head>
+  <body>
+   
+    <p>Mi aplicacion de tareas</p>
+
+    <ul id="toDoList">
+
+      <input type="text" id="toDoTitle" />
+      <button id="addButton">Agregar tarea</button>
+      <br><br>
+    </ul>
+
+    <script type="text/javascript">
+
+      let parrafo = document.getElementsByTagName("p");
+
+      console.log(parrafo);
+      
+      parrafo[0].id= "mi_ID";
+      parrafo[0].style.color = "green";
+      parrafo[0].style.fontSize = "50px";
+      parrafo[0].style.textAlign = "center";
+      parrafo[0].style.backgroundColor = "violet";
+
+      var tareas = [
+        "Fregar platos", 
+        "Hacer menu", 
+        "Tirar basura",
+      ];
+
+      var list = document.querySelector("#toDoList");
+      //console.log(list);
+
+      function agregarTarea(tarea, id) {
+       
+        let li =document.createElement("li");
+        li.textContent = tarea;
+        if (id) {
+          li.id = id;
+        }
+        toDoList.appendChild(li);
+      }
+
+      for(var i = 0; i < tareas.length; i++) {
+        var tarea = tareas[i];
+
+        agregarTarea(tarea, "elemento" + i);
+      }
+
+      let agregarBtn = document.getElementById("addButton");
+      agregarBtn.addEventListener("click", function() {
+        let newTask = document.getElementById("toDoTitle").value;
+
+       agregarTarea(newTask);
+      });
+
+      //setTimeout(function() {
+      //  var elementoAEliminar = document.getElementById("elemento2");
+      //  todoList.removeChild(elementoAEliminar);
+      //}, 3000);
+
+   
+    </script>
+  </body>
+</html>
