@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expresiones regulares</title>
+</head>
+<body>
+  <h1>
+    Expresiones regulares
+  </h1>
+  <p>Expresiones regulares: que son?</p>
+
+  <script type="text/javascript">
+    let texto  = "hola mundo";
+    let regExp = /[a-z]$/g;
+
+    console.log(texto.search(regExp));
+    console.log(regExp.test(texto));
+
+    let regExp2 = /hol./;
+    let texto2 = "holi mundo";
+
+    console.log(texto2.search(regExp2));
+    console.log(regExp2.test(texto2));
+  </script>
+
+</body>
+</html>
