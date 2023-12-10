@@ -8,7 +8,7 @@ setcookie('Oreo', 'dobleCrema', $expire);
 
 // Redirigir a la misma página
 header('Location: ' . $_SERVER['PHP_SELF']);
-exit;
+exit();
 
 session_start();
 
