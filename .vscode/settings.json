@@ -2,5 +2,7 @@
   "editor.tokenColorCustomizations": {
     "comments": "",
     "textMateRules": []
-  }
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "workbench.tree.enableStickyScroll": true
 }
