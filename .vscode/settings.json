@@ -4,5 +4,7 @@
     "textMateRules": []
   },
   "explorer.autoReveal": "focusNoScroll",
-  "workbench.tree.enableStickyScroll": true
+  "workbench.tree.enableStickyScroll": true,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
