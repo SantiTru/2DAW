@@ -20,9 +20,9 @@ sudo chmod -R u+x /opt/tomcat/bin
 cat <<EOF | sudo tee -a /opt/tomcat/conf/tomcat-users.xml
 <tomcat-users>
     <role rolename="manager-gui"/>
-    <user username="manager" password="user1" roles="manager-gui"/>
+    <user username="manager" password='user1' roles="manager-gui"/>
    <role rolename="admin-gui" />
-<user username="admin" password="admin1" roles="manager-gui,admin-gui" />
+<user username="admin" password='admin1' roles="manager-gui,admin-gui" />
 </tomcat-users>
 EOF
 
