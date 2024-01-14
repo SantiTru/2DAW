@@ -8,7 +8,7 @@ sudo apt update
 sudo apt install -y openjdk-17-jdk
 
 # Descargar e instalar Apache Tomcat (ajusta la versión según tus necesidades)
-VersionDelTomcat="10.1.18" //esto es una variable para guardar el numero de la version y luego ir usandola abajo
+VersionDelTomcat="10.1.18" 
 sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v${VersionDelTomcat}/bin/apache-tomcat-${VersionDelTomcat}.tar.gz -P /tmp
 sudo tar xzvf /tmp/apache-tomcat-${VersionDelTomcat}.tar.gz -C /opt/tomcat --strip-components=1
 
