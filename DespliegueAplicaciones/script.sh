@@ -89,4 +89,4 @@ sudo systemctl start tomcat
 sudo systemctl enable tomcat
 
 #Permitimos el trafico al puerto 80 para aceptar solicitudes http
-sudo ufw allow 80
+sudo ufw allow 8080
