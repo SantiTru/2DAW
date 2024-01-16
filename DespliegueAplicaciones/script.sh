@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Damos permisos de instalación al script
+sudo chmod +x script.sh
+
 # Crear usuario Tomcat
 sudo useradd -m -d /opt/tomcat -U -s /bin/false tomcat
 
@@ -89,4 +92,4 @@ sudo systemctl start tomcat
 sudo systemctl enable tomcat
 
 #Permitimos el trafico al puerto 80 para aceptar solicitudes http
-sudo ufw allow 8080
+sudo ufw allow 80
