@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#Damos permisos de instalación al script
-sudo chmod +x script.sh
-
 # Crear usuario Tomcat
 sudo useradd -m -d /opt/tomcat -U -s /bin/false tomcat
 
