@@ -15,15 +15,23 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0          
   TomcatEC2:
-    Type: AWS::EC2::Instance
+    Type: "AWS::EC2::Instance"
     Properties:
-      ImageId: ami-06aa3f7caf3a30282
-      IamInstanceProfile: LabInstanceProfile
+      ImageId: "ami-06aa3f7caf3a30282"
+      IamInstanceProfile: "LabInstanceProfile"
       InstanceType: t2.micro
-      KeyName: vockey
+      KeyName: "vockey"
       Tags:
-        - Key: Name
-          Value: TomcatEC2
+        - Key: "Name"
+          Value: "TomcatEC2_2"
       SecurityGroupIds:
         - Ref: AplicationServerSecurityGroup
