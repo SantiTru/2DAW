@@ -1,11 +1,11 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "Plantilla para crear EC2 y grupo de seguridad"
 Resources:
-  AplicationServerSecurityGroup:
+  AplicationServerSecurityGroup2:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: "Grupo de seguridad creado desde la plantilla"
-      GroupName: AppServerSecurityGroup
+      GroupName: AppServerSecurityGroup2
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 8080
@@ -34,4 +34,4 @@ Resources:
         - Key: "Name"
           Value: "TomcatEC2_2"
       SecurityGroupIds:
-        - Ref: AplicationServerSecurityGroup
+        - Ref: AplicationServerSecurityGroup2
