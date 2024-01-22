@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function App() {
-  const data = ["aprende react 🤑", "aprende javascript 😎", "aprende css 🙂"];
+  const data = ["aprende react 🤑", "aprende javascript 😎", "aprende css 🤩"];
   const [step, setStep] = useState(1);
 
   function handlePrevious() {
